@@ -17,6 +17,7 @@ var CLIENT_ID = 'YOUR CLIENT ID',
 	PRIVATE_KEY_PASSPHRASE = 'YOUR PRIVATE KEY PASSPHRASE',
 	ENTERPRISE_ID = 'YOUR ENTERPRISE ID';
 
+
 	
 // Set up Express and App Auth for the Box SDK
 var app = express(),
@@ -115,6 +116,13 @@ app.post('/api/users/new', function(req, res) {
 	}));
 });
 
+/// catch 404 and forwarding to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
 app.listen(process.env.PORT);
 console.log('Server started!');
-console.log('Visit http://localhost:3000/signup to start.');
+console.log('Visit http://localhost:80/signup to start.');
