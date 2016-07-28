@@ -3,7 +3,7 @@
 To get started:
 
 1. Clone the repo or download a zip from GitHub
-2. Edit `app.js` with your Box API credentials.  For information on how to generate them, head here: https://docs.box.com/docs/app-auth
+2. Edit `app.js` with your Box API credentials.  You will also need to place your private_key.pem in the root of this project.  For information on how to generate them, head here: https://docs.box.com/docs/app-auth
 3. Run the sample server:
 
 ```
