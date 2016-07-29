@@ -123,6 +123,6 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-app.listen(process.env.PORT);
+app.listen(3000);
 console.log('Server started!');
-console.log('Visit http://localhost:80/signup to start.');
+console.log('Visit http://localhost:3000/signup to start.');
