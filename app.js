@@ -17,7 +17,6 @@ var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna',
 	PRIVATE_KEY_PASSPHRASE = 'b3080980691e02e1d9ce9b1bff4b3b77',
 	ENTERPRISE_ID = '16376341';
 
-//test/
 	
 // Set up Express and App Auth for the Box SDK
 var app = express(),
