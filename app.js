@@ -123,6 +123,16 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-app.listen(3000);
-console.log('Server started!');
-console.log('Visit http://localhost:3000/signup to start.');
+//app.listen(3000);
+//console.log('Server started!');
+///console.log('Visit http://localhost:3000/signup to start.');
+
+// get the app environment from Cloud Foundry
+var appEnv = cfenv.getAppEnv();
+
+// start server on the specified port and binding host
+app.listen(appEnv.port, '0.0.0.0', function() {
+  // print a message when the server starts listening
+  console.log("server starting on " + appEnv.url);
+});
+
