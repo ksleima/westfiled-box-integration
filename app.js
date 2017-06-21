@@ -10,12 +10,12 @@ var path = require('path');
 // Application Parameters - Fill in with your app's values
 // ------------------------------------------------------------------------------
 
-var CLIENT_ID = 'YOUR CLIENT ID',
-	CLIENT_SECRET = 'YOUR CLIENT SECRET',
-	PUBLIC_KEY_ID = 'YOUR PUBLIC KEY ID',
+var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna',
+	CLIENT_SECRET = '5xCJXqmPgliUNZbFCd87R859d1OURER2T',
+	PUBLIC_KEY_ID = 'ytevi8tw',
 	PRIVATE_KEY_PATH = './path/to/your_private_key.pem',
-	PRIVATE_KEY_PASSPHRASE = 'YOUR PRIVATE KEY PASSPHRASE',
-	ENTERPRISE_ID = 'YOUR ENTERPRISE ID';
+	PRIVATE_KEY_PASSPHRASE = 'secret',
+	ENTERPRISE_ID = '16376341';
 
 
 	
