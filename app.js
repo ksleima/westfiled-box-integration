@@ -127,6 +127,11 @@ app.use(function(req, res, next) {
 //console.log('Server started!');
 ///console.log('Visit http://localhost:3000/signup to start.');
 
+// cfenv provides access to your Cloud Foundry environment
+// for more info, see: https://www.npmjs.com/package/cfenv
+var cfenv = require('cfenv');
+
+
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
