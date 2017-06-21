@@ -13,7 +13,7 @@ var path = require('path');
 var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna',
 	CLIENT_SECRET = '5xCJXqmPgliUNZbFCd87R859d1OURER2T',
 	PUBLIC_KEY_ID = '6x96zf5k',
-//	PRIVATE_KEY_PATH = './path/to/your_private_key.pem',
+	PRIVATE_KEY_PATH = './private_key.pem',
 	PRIVATE_KEY_PASSPHRASE = 'b3080980691e02e1d9ce9b1bff4b3b77',
 	ENTERPRISE_ID = '16376341';
 
