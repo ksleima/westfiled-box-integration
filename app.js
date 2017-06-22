@@ -44,7 +44,7 @@ var app = express(),
 			expirationTime: 1800000,
 //			expiredBufferMS: 3000,
 //			staleBufferMS: 0,
-			verifyTimestamp: false,
+			verifyTimestamp: true,
 			}
 	});
 
