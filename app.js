@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var BoxSDK = require('box-node-sdk');
 var fs = require('fs');
 var path = require('path');
+var util = require('util');
 
 // ------------------------------------------------------------------------------
 // Application Parameters - Fill in with your app's values
