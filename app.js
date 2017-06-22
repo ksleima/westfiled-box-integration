@@ -122,7 +122,7 @@ app.get('/folder', function(req, res) {
   
   // this request gets the user's info.  I am just using it to get the name
   var params = {};
-  adminAPIClient.get('/folders/0', params, adminAPIClient.defaultResponseHandler(function(err, data) {
+  adminAPIClient.get('/folders/0?fields=shared_link', params, adminAPIClient.defaultResponseHandler(function(err, data) {
 
 		if (err) {
 			//console.log(err);
