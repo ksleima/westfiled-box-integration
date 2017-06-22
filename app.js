@@ -29,7 +29,7 @@ var CLIENT_ID = 'usn8nf8li1e7filj5nqwkz4vzb8j27wf',
 
 	
 
-/*	
+
 // Set up Express and App Auth for the Box SDK
 var app = express(),
 	sdk = new BoxSDK({
@@ -46,15 +46,15 @@ var app = express(),
 //			staleBufferMS: 0,
 			}
 	});
-*/
-	
+
+/*	
 // Set up Express and App Auth for the Box SDK
 var app = express(),
 	sdk = new BoxSDK({
 		clientID: CLIENT_ID,
 		clientSecret: CLIENT_SECRET,
 	});	
-	
+*/	
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -72,9 +72,9 @@ app.set('view engine', 'hbs');
 // around user management.  Not using this here, but this client is what you would
 // use to perform CRUD operations on users
 
-//var adminAPIClient = sdk.getAppAuthClient('enterprise', ENTERPRISE_ID);
-var adminAPIClient = sdk.getAnonymousClient();
-var adminAPIClient = sdk.getBasicClient('6RBM9ZXRNdj9tq6bsAWLqGx5OArjxaeC');
+var adminAPIClient = sdk.getAppAuthClient('enterprise', ENTERPRISE_ID);
+//var adminAPIClient = sdk.getAnonymousClient();
+//var adminAPIClient = sdk.getBasicClient('6RBM9ZXRNdj9tq6bsAWLqGx5OArjxaeC');
 
 //route to retreive access token for the given Box app user id
 app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
@@ -119,6 +119,35 @@ app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
 app.get('/folder', function(req, res) {
   
   var fileId = "";
+  
+  
+  	adminAPIClient._session.tokenManager.getTokensJWTGrant('enterprise', ENTERPRISE_ID, function (err, accessTokenInfo) {
+            console.log("retrieving access token now...");
+			if (err) {
+			//console.log(err);
+			res.render('signup', {
+				error: 'An error occurred during login - ' + err.message,
+				errorDetails: util.inspect(err)
+			});
+//			console.log(util.inspect(err));
+			return;
+		}           if (err) {
+                console.log(err);
+            }
+            console.log("Access Token: " + accessTokenInfo.accessToken);
+            
+            //send the response to the iOS app
+            res.setHeader('content-type', 'application/json');
+            var body = {  'name' : ENTERPRISE_ID,
+                       'user_id' : ENTERPRISE_ID,
+                  'access_token' : accessTokenInfo.accessToken };
+            
+            res.status(200);
+            res.send(body);
+        });
+  
+  
+  
   
   
   // this request gets the user's info.  I am just using it to get the name
