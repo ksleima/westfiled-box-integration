@@ -107,10 +107,20 @@ app.post('/api/users/new', function(req, res) {
 	// of all our users, so we don't need a separate database for this sample app
 	adminAPIClient.post('/users', requestParams, adminAPIClient.defaultResponseHandler(function(err, data) {
 
-		if (err) {
+/*		if (err) {
             console.log(err);
 			return;
 		}
+		*/
+		if (err) {
+			res.render('signup', {
+				error: 'An error occurred during login - ' + err.message,
+				errorDetails: util.inspect(err)
+			});
+			return;
+		}
+
+		
         console.log("New app user created with name: " + data.name + ". And ID: " + data.id);
         res.send("New app user created with name: " + data.name + ". And ID: " + data.id);
 	}));
