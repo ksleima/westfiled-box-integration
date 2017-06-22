@@ -132,7 +132,7 @@ app.post('/api/users/new', function(req, res) {
 				error: 'An error occurred during login - ' + err.message,
 				errorDetails: util.inspect(err)
 			});
-			console.log(util.inspect(err));
+//			console.log(util.inspect(err));
 			return;
 		}
 
