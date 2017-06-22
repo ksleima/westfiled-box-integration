@@ -11,12 +11,23 @@ var util = require('util');
 // Application Parameters - Fill in with your app's values
 // ------------------------------------------------------------------------------
 
-var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna', 
+/*var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna', 
 	CLIENT_SECRET = '5xCJXqmPgliUNZbFCd87R859d1OURER2',
 	PUBLIC_KEY_ID = 'ytevi8tw',
 	PRIVATE_KEY_PATH = './private_key.txt',
 	PRIVATE_KEY_PASSPHRASE = 'b3080980691e02e1d9ce9b1bff4b3b77',
 	ENTERPRISE_ID = '16376341';
+	*/
+
+	
+var CLIENT_ID = 'usn8nf8li1e7filj5nqwkz4vzb8j27wf', 
+	CLIENT_SECRET = 'V9WnBBlb5EjiHY1WUvl0G6mCkm3SD5Lw',
+	PUBLIC_KEY_ID = 'k74gw4la',
+	PRIVATE_KEY_PATH = './private_key.txt',
+	PRIVATE_KEY_PASSPHRASE = 'b3080980691e02e1d9ce9b1bff4b3b77',
+	ENTERPRISE_ID = '16376341';
+
+	
 
 	
 // Set up Express and App Auth for the Box SDK
