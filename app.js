@@ -93,6 +93,7 @@ app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
 				error: 'An error occurred during login - ' + err.message,
 				errorDetails: util.inspect(err)
 			});
+		}
 		//grab the user's name and user Id
 		var appUserName = data.name;
 		var appUserId = data.id;
