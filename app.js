@@ -88,9 +88,11 @@ app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
   adminAPIClient.get('/users/' + boxAppUserId, params, adminAPIClient.defaultResponseHandler(function(err, data) {
 
 		if (err) {
-			console.log(err);
-			return;
-		}
+			//console.log(err);
+			res.render('signup', {
+				error: 'An error occurred during login - ' + err.message,
+				errorDetails: util.inspect(err)
+			});
 		//grab the user's name and user Id
 		var appUserName = data.name;
 		var appUserId = data.id;
