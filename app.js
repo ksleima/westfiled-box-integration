@@ -125,6 +125,7 @@ app.post('/api/users/new', function(req, res) {
 		}
 		*/
 		if (err) {
+			console.log(err);
 			res.render('signup', {
 				error: 'An error occurred during login - ' + err.message,
 				errorDetails: util.inspect(err)
