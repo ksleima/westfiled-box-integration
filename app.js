@@ -63,7 +63,9 @@ app.set('view engine', 'hbs');
 // Use a single SDK client for the app admin, which will perform all operations
 // around user management.  Not using this here, but this client is what you would
 // use to perform CRUD operations on users
-var adminAPIClient = sdk.getAppAuthClient('enterprise', ENTERPRISE_ID);
+
+//var adminAPIClient = sdk.getAppAuthClient('enterprise', ENTERPRISE_ID);
+var adminAPIClient = sdk.getAnonymousClient ();
 
 //route to retreive access token for the given Box app user id
 app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
