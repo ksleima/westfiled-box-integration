@@ -6,9 +6,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-	"cfenv": "1.0.x",
+    "cfenv": "1.0.x",
     "body-parser": "^1.15.0",
-    "box-node-sdk": "^1.5.1",
+    "box-node-sdk": "1.4.0",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0"
   },
