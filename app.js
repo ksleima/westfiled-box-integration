@@ -115,7 +115,12 @@ app.get('/folder', function(req, res) {
   adminAPIClient.get('/folders/0', params, adminAPIClient.defaultResponseHandler(function(err, data) {
 
 		if (err) {
-			console.log(err);
+			//console.log(err);
+			res.render('signup', {
+				error: 'An error occurred during login - ' + err.message,
+				errorDetails: util.inspect(err)
+			});
+//			console.log(util.inspect(err));
 			return;
 		}
 		//grab the user's name and user Id
