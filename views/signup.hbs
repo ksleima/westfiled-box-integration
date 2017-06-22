@@ -2,6 +2,15 @@
 	<div class="alert alert-danger" role="alert">{{error}}</div>
 {{/if}}
 
+{{#if error}}
+	<div class="alert alert-danger" role="alert">
+		<strong>{{error}}</strong>
+		{{#if errorDetails}}
+			<div>{{errorDetails}}</div>
+		{{/if}}
+	</div>
+{{/if}}
+
 <form action="/api/users/new" method="post">
 	<div class="form-group">
 		<label for="name">Name</label>
