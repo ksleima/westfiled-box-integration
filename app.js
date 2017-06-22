@@ -29,7 +29,7 @@ var CLIENT_ID = 'usn8nf8li1e7filj5nqwkz4vzb8j27wf',
 
 	
 
-	
+/*	
 // Set up Express and App Auth for the Box SDK
 var app = express(),
 	sdk = new BoxSDK({
@@ -46,7 +46,15 @@ var app = express(),
 //			staleBufferMS: 0,
 			}
 	});
-
+*/
+	
+// Set up Express and App Auth for the Box SDK
+var app = express(),
+	sdk = new BoxSDK({
+		clientID: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+	});	
+	
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -65,7 +73,7 @@ app.set('view engine', 'hbs');
 // use to perform CRUD operations on users
 
 //var adminAPIClient = sdk.getAppAuthClient('enterprise', ENTERPRISE_ID);
-var adminAPIClient = sdk.getAnonymousClient ();
+var adminAPIClient = sdk.getAnonymousClient();
 
 //route to retreive access token for the given Box app user id
 app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
