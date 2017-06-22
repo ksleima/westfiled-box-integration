@@ -10,8 +10,8 @@ var path = require('path');
 // Application Parameters - Fill in with your app's values
 // ------------------------------------------------------------------------------
 
-var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna',
-	CLIENT_SECRET = '5xCJXqmPgliUNZbFCd87R859d1OURER2T',
+var CLIENT_ID = '2y3f7wr99x1emxgwuaufiwku9km19kna', 
+	CLIENT_SECRET = '5xCJXqmPgliUNZbFCd87R859d1OURER2',
 	PUBLIC_KEY_ID = 'ytevi8tw',
 	PRIVATE_KEY_PATH = './private_key.txt',
 	PRIVATE_KEY_PASSPHRASE = 'b3080980691e02e1d9ce9b1bff4b3b77',
