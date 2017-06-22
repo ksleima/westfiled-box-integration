@@ -74,7 +74,7 @@ app.set('view engine', 'hbs');
 
 //var adminAPIClient = sdk.getAppAuthClient('enterprise', ENTERPRISE_ID);
 var adminAPIClient = sdk.getAnonymousClient();
-ar adminAPIClient = sdk.getBasicClient('6RBM9ZXRNdj9tq6bsAWLqGx5OArjxaeC');
+var adminAPIClient = sdk.getBasicClient('6RBM9ZXRNdj9tq6bsAWLqGx5OArjxaeC');
 
 //route to retreive access token for the given Box app user id
 app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
