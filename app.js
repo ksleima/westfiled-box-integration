@@ -102,6 +102,51 @@ app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
 	}));
 });
 
+
+
+
+app.get('/folder', function(req, res) {
+  
+  var fileId = "";
+  
+  
+  // this request gets the user's info.  I am just using it to get the name
+  var params = {};
+  adminAPIClient.get('/folders/0', params, adminAPIClient.defaultResponseHandler(function(err, data) {
+
+		if (err) {
+			console.log(err);
+			return;
+		}
+		//grab the user's name and user Id
+		var foldername = data.name;
+	
+		
+		/*req.sdk._session.tokenManager.getTokensJWTGrant('user', boxAppUserId, function (err, accessTokenInfo) {
+            console.log("retrieving access token now...");
+            if (err) {
+                console.log(err);
+            }
+            console.log("Access Token: " + accessTokenInfo.accessToken);
+            
+            //send the response to the iOS app
+            res.setHeader('content-type', 'application/json');
+            var body = {  'name' : appUserName,
+                       'user_id' : appUserId,
+                  'access_token' : accessTokenInfo.accessToken };
+            
+            res.status(200);
+            res.send(body);
+        });
+		*/
+		var body = {  'name' : foldername,
+                     };
+            res.status(200);
+            res.send(body);
+	}));
+});
+
+
 app.get('/', function(req, res) {
     res.render('signup');
 });
@@ -109,6 +154,7 @@ app.get('/', function(req, res) {
 app.get('/signup', function(req, res) {
 	res.render('signup');
 });
+
 
 //route to create a new app user and 
 app.post('/api/users/new', function(req, res) {
