@@ -122,7 +122,28 @@ app.get('/api/accesstoken/:box_app_user_id', function(req, res) {
 });
 
 
+app.get('/enterprise', function(req, res) {
 
+	adminAPIClient._session.tokenManager.getTokensJWTGrant('enterprise', ENTERPRISE_ID, function (err, accessTokenInfo) {
+            console.log("retrieving access token now...");
+			if (err) {
+				res.render('signup', {
+					error: 'An error occurred during login - ' + err.message,
+					errorDetails: util.inspect(err)
+				});
+				return;
+			}         
+            console.log("Access Token: " + accessTokenInfo.accessToken);
+            //send the response to the iOS app
+            res.setHeader('content-type', 'application/json');
+            var body = {  'name' : ENTERPRISE_ID,
+                       'user_id' : ENTERPRISE_ID,
+                  'access_token' : accessTokenInfo.accessToken };
+            
+            res.status(200);
+            res.send(body);
+        });
+}
 
 app.get('/folder', function(req, res) {
   

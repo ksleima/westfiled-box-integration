@@ -1,0 +1,5 @@
+http://box-integration-auth.mybluemix.net
+New app user created with name: test@test.com. And ID: 1940090305
+
+http://box-integration-auth.mybluemix.net/api/accesstoken/1940090305
+{"name":"test@test.com","user_id":"1940090305","access_token":"OVVRSANNlBHSTArg6ZJOL22rfMRUk0cj"}
