@@ -143,7 +143,7 @@ app.get('/enterprise', function(req, res) {
             res.status(200);
             res.send(body);
         });
-}
+});
 
 app.get('/folder', function(req, res) {
   
